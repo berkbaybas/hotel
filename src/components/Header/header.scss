@@ -1,0 +1,43 @@
+.Header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+
+  &-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &-menu {
+    ul {
+      display: flex;
+      li {
+        &:not(:last-child) {
+          margin-right: 64px;
+        }
+        a {
+          font-size: 16px;
+          font-weight: 500;
+          text-transform: uppercase;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  &-book {
+    button {
+      width: 150px;
+      height: 48px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-weight: 700;
+      background-color: $color-light-green;
+      border: 0;
+      text-transform: uppercase;
+    }
+  }
+}
