@@ -1,0 +1,59 @@
+.Hero {
+  height: 820px;
+  position: relative;
+  img {
+    height: 100%;
+    width: 100%;
+  }
+
+  &-discover {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 406px;
+    background-color: rgba($color: $color-hero-green, $alpha: 0.5);
+    padding-left: 130px;
+    padding-top: 64px;
+    padding-bottom: 48px;
+    padding-right: 25px;
+
+    &-title {
+      height: 128px;
+      width: 670px;
+      h1 {
+        font-family: $hero-title-font-family;
+        font-size: 60px;
+        font-weight: 700;
+        color: white;
+        margin-bottom: 24px;
+        span {
+          color: $color-light-green;
+        }
+      }
+    }
+
+    p {
+      font-size: 22px;
+      font-weight: 400;
+      line-height: 32px;
+      color: white;
+      margin-bottom: 36px;
+      width: 670px;
+    }
+
+    button {
+      height: 48px;
+      width: 188px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: $color-light-green;
+      color: black;
+      text-transform: uppercase;
+      border: 0;
+      font-weight: 700;
+      line-height: 24px;
+    }
+  }
+}
