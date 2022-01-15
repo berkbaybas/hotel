@@ -1,6 +1,8 @@
 @import 'variables';
 @import 'normalize';
+@import 'formalize';
 @import 'global';
 
 @import '../components/Header/header.scss';
 @import '../components/Hero/hero.scss';
+@import '../components/filter.scss';

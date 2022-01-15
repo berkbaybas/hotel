@@ -1,4 +1,4 @@
-import React from 'react'
+import Filter from '../Filter'
 
 import heroBackground from '../../assets/hero_background.png'
 
@@ -18,6 +18,7 @@ function Hero() {
         </p>
         <button>Discover More</button>
       </div>
+      <Filter />
     </main>
   )
 }

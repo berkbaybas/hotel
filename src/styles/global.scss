@@ -2,7 +2,8 @@
 
 body {
   font-family: $font-family;
-  font-size: 14px;
+  font-size: 16px;
+  height: 2000px;
 }
 
 .container {
@@ -13,13 +14,4 @@ body {
 
 button {
   cursor: pointer;
-}
-
-a {
-  text-decoration: none;
-}
-
-ol,
-ul {
-  list-style: none;
 }
