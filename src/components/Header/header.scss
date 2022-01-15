@@ -3,6 +3,11 @@
   justify-content: space-between;
   align-items: center;
   height: 80px;
+  position: relative;
+  @include mq {
+    height: 60px;
+    width: 100%;
+  }
 
   &-logo {
     display: flex;
@@ -11,10 +16,37 @@
   }
 
   &-menu {
+    @include mq {
+      display: none;
+      &.active {
+        display: block;
+      }
+      height: 100vh;
+      width: 100%;
+      position: absolute;
+      right: -16px;
+      top: 0;
+      z-index: 1;
+      background-color: white;
+      box-shadow: 0px 4px 40px 0px #19332a1a;
+      margin-left: 32px;
+      ul {
+        display: flex;
+        flex-direction: column;
+        li {
+          margin-left: 46px;
+          margin-bottom: 36px;
+
+          &:nth-child(4) {
+            margin-bottom: 26px;
+          }
+        }
+      }
+    }
     ul {
       display: flex;
       li {
-        &:not(:last-child) {
+        &:not(:nth-child(4)) {
           margin-right: 64px;
         }
         a {
@@ -25,19 +57,65 @@
         }
       }
     }
+
+    &-close {
+      display: none;
+
+      @include mq {
+        display: flex;
+        width: 100%;
+        justify-content: flex-end;
+        align-items: center;
+        padding: 24px;
+      }
+    }
+
+    .Header-book-hamburger {
+      display: none;
+
+      @include mq {
+        display: block;
+        button {
+          width: 148px;
+          height: 48px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-weight: 700;
+          background-color: $color-green-500;
+          border: 0;
+          text-transform: uppercase;
+        }
+      }
+    }
   }
 
   &-book {
+    @include mq {
+      display: none;
+    }
     button {
-      width: 150px;
+      width: 148px;
       height: 48px;
       display: flex;
       justify-content: center;
       align-items: center;
       font-weight: 700;
-      background-color: $color-light-green;
+      background-color: $color-green-500;
       border: 0;
       text-transform: uppercase;
+    }
+  }
+
+  &-hamburger {
+    display: none;
+    background-color: transparent;
+    @include mq {
+      .icon {
+        cursor: pointer;
+        font-size: 24px;
+      }
+      display: block;
     }
   }
 }
