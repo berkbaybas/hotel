@@ -65,6 +65,7 @@ function Filter() {
           dayClassName={(date) => 'Filter-datepicker-day'}
           selectsRange
           monthsShown={2}
+          calendarStartDay={1}
           showPopperArrow={false}
           customInput={<CustomDateRangeInput />}
           renderCustomHeader={({

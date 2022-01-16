@@ -12,7 +12,7 @@ function CustomPickerHeader({
   nextMonthButtonDisabled,
   customHeaderCount
 }) {
-  const years = [2018, 2019, 2020, 2021]
+  const years = [2021, 2020, 2019]
 
   const months = [
     'January',
@@ -55,7 +55,7 @@ function CustomPickerHeader({
         </div>
         <div className="PickerHeader-select">
           <select
-            value={date.getYear()}
+            value={years[date.getYear()]}
             onChange={({ target: { value } }) => changeYear(value)}
           >
             {years.map((option) => (
