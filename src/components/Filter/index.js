@@ -36,12 +36,14 @@ function Filter() {
       </button>
       <button className="Filter-datepicker-custom" onClick={onClick} ref={ref}>
         {console.log(value)}
-        <p className="Filter-datepicker-custom-title">CHECK-IN</p>
+        <p className="Filter-datepicker-custom-title">CHECK-OUT</p>
         <div className="Moment">
-          <p className="Moment-day">{moment(endDate).format('DD')}</p>
+          <p className="Moment-day">
+            {endDate ? moment(endDate).format('DD') : ''}
+          </p>
           <div className="Moment-chevron">
             <p className="Moment-chevron-month">
-              {moment(endDate).format('MMMM').substring(0, 3)}
+              {endDate ? moment(endDate).format('MMMM').substring(0, 3) : ''}
             </p>
             <ChevronDown className="icon" />
           </div>

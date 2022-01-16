@@ -11,17 +11,24 @@
   background-color: white;
   box-shadow: 0px 4px 40px 0px #19332a1a;
 
-  @include mq {
-    margin-top: -16px;
+  @include mq('desktop') {
+    flex-wrap: wrap;
+    width: auto;
+    height: auto;
     padding: 16px 36px;
     margin-left: 16px;
     margin-right: 16px;
-    width: auto;
-    height: auto;
-    flex-wrap: wrap;
+  }
+
+  @include mq {
+    margin-top: -16px;
   }
   &-family {
     display: flex;
+
+    @include mq('desktop') {
+      margin-top: 0px;
+    }
 
     @include mq {
       flex: 1;
@@ -44,7 +51,7 @@
         font-weight: 700;
         color: $color-gray;
         text-transform: uppercase;
-        margin-bottom: 6px;
+        margin-bottom: 7px;
         padding-left: 16px;
 
         @include mq {
@@ -149,6 +156,8 @@
           font-size: 42px;
           font-weight: 700;
           font-family: $hero-title-font-family;
+          min-height: 48px;
+          min-width: 54px;
           @include mq {
             font-size: 36px;
           }
@@ -157,7 +166,7 @@
         &-chevron {
           display: flex;
           flex-direction: column;
-          align-items: flex-end;
+          align-items: center;
           margin-left: 4px;
 
           .icon {
@@ -169,6 +178,7 @@
             font-weight: 700;
             font-family: $hero-title-font-family;
             font-size: 14px;
+            min-height: 16px;
           }
         }
       }
@@ -208,7 +218,8 @@
         padding-right: 4px;
       }
       &.react-datepicker__day--selected,
-      &.react-datepicker__day--range-end {
+      &.react-datepicker__day--range-end,
+      &.react-datepicker__day--keyboard-selected {
         background-color: #326654;
         color: white;
         box-shadow: 0px 1.5px 1px 0px #001f7040;
@@ -244,9 +255,12 @@
       align-items: center;
     }
 
+    @include mq('desktop') {
+      margin-top: 24px;
+    }
+
     @include mq {
       margin-left: 0;
-      margin-top: 24px;
       color: white;
       background-color: #65cca9;
       height: 60px;
@@ -317,10 +331,18 @@
   border-bottom: 0;
 }
 
+.react-datepicker__day-names {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-around;
+  padding-left: 48px;
+  padding-right: 48px;
+}
 // Picker Header Scss Start
 .PickerHeader {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   background: white;
   margin-bottom: 15px;
   button {
@@ -329,10 +351,10 @@
     justify-content: center;
     align-items: center;
     box-shadow: 0px 1px 1px 0px #000e330d;
-
-    icon {
-      font-size: 44px;
-    }
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 0;
   }
   &-select {
     position: relative;
